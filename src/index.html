@@ -11,27 +11,15 @@
 <body>
     <main class="main">
         <header class='header'>
-            <h1 class="header__title">TEST APP</h1>
+            <h1 class="header__title">TEST ProContext</h1>
         </header>
-        <section class='result'></section>
-        <div class="popup">
-            <div class="popup__content">
-                <img src="" alt="" class="popup__image">
-                <form class="popup__form" name="new"  onsubmit="return false;">
-                    <div class="popup__input-content">
-                        <input name = 'name' type="text" required class="popup__input" placeholder="Ваше имя">
-                    </div>
-                    <div class="popup__input-content">
-                        <input name = 'comment' type="text" required class="popup__input" placeholder="Ваш комментарий">
-                    </div>
-                    <button type class="popup__button">Оставить комментарий</button>
-                </form>
-                <div class="popup__content-comments"></div>
-                <img src="<%=require('./images/close.svg')%>" alt="close" class="popup__close">
-            </div>
-          </div>
+        <section class='result'>
+            <div class="result__author"></div>
+            <div class="result__album"></div>
+            <div class="result__image"></div>
+        </section>
         <footer class='footer'>
-            <h2 class="footer__title">&#169; 2018-2019</h2>
+            <h2 class="footer__title">&#169; Арзамасцев Роман</h2>
         </footer>
     </main>
     <script src = "<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>

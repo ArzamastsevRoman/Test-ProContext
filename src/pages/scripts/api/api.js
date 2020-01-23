@@ -1,15 +1,10 @@
 export default class Api {
     constructor (url) {
         this._url = url;
-
-        this.getImage = this.getImage.bind(this);
-        this.getImagePopup = this.getImagePopup.bind(this);
-        this.addComments = this.addComments.bind(this);
-        this.getComments = this.getComments.bind(this);
     }
 
-    getImage () {
-        return fetch(`${this._url}`, {
+    getAuthor() {
+        return fetch(`${this._url}/users`, {
             method: 'GET'
         })
         .then(res => {
@@ -23,12 +18,12 @@ export default class Api {
         })
     }
 
-    getImagePopup (id) {
-        this._id = id;
-        return fetch(`${this._url}/${this._id}`, {
+    getAlbums(id) {
+        return fetch(`${this._url}/albums?userid=${id}`, {
             method: 'GET'
         })
         .then(res => {
+
 			if(res.ok) {
                 return res.json();
             } else {
@@ -38,28 +33,12 @@ export default class Api {
         })
     }
 
-    addComments (name, id, comments) {
-        this._name = name;
-        this._id = id;
-        this._comments = comments;
-        return fetch(`${this._url}/${this._id}/comments`, {
-            method: 'POST',
-            headers: {
-				'Content-Type': 'application/json'
-			},
-            body: JSON.stringify({
-                name: `${this._name}`,
-                comment: `${this._comments}`
-            })
-        })
-    }
-
-    getComments (id) {
-        this._id = id;
-        return fetch(`${this._url}/${this._id}`, {
+    getImage(albumId) {
+        return fetch(`${this._url}/photos?albumid=${albumId}`, {
             method: 'GET'
         })
         .then(res => {
+
 			if(res.ok) {
                 return res.json();
             } else {

@@ -10,22 +10,24 @@ import '../../block/popup/popup.css'
 import Api from './api/api'
 import CardList from './cardList/cardList'
 
-export {apiImages}
+export {apiFoto}
 
-const urlImage = 'https://boiling-refuge-66454.herokuapp.com/images';
-const apiImages = new Api (urlImage);
+const url = 'https://jsonplaceholder.typicode.com';
+const apiFoto = new Api (url);
 
 const resultContent = document.querySelector('.result');
+const resultAuthor = resultContent.querySelector('.result__author');
 
-apiImages.getImage()
+apiFoto.getAuthor()
     .then((data) => {
-        const startCardList = new CardList (resultContent, data);
-        startCardList.render();
-    })
-	.catch(err => { 
-        alert(`${err}: ${err.status}`);
-		console.log(`catch err: ${err}: ${err.status}`); 
-    });
+           console.log(data)
+           const startList = new CardList (resultAuthor, data);
+            startList.renderAuthor();
+       })
+    .catch(err => { 
+           alert(`${err}: ${err.status}`);
+    	console.log(`catch err: ${err}: ${err.status}`); 
+       });
 
 
 
