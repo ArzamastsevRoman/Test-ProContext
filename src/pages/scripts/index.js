@@ -5,7 +5,6 @@ import '../../block/main/main.css'
 import '../../block/header/header.css'
 import '../../block/footer/footer.css'
 import '../../block/result/result.css'
-import '../../block/popup/popup.css'
 
 import Api from './api/api'
 import CardList from './cardList/cardList'

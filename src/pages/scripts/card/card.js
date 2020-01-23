@@ -35,7 +35,7 @@ export default class Card {
                             console.log(data)
                             for (let i=0; i<30; i++){
                                 const resultCard = document.createElement('img');
-                                resultCard.classList.add('result__author-image');
+                                resultCard.classList.add('result__foto');
     
                                 resultCard.setAttribute('src', `${data[i].url}`);
                                 resultCard.setAttribute('alt', 'Подгруженное изображение');
