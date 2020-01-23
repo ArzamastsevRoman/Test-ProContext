@@ -15,6 +15,9 @@ export default class Card {
         resultAuthor.textContent = this.author;
 
         resultAuthor.onclick = this.createAlbum;
+        resultAuthor.addEventListener('click', function () {
+            resultAuthor.setAttribute('style', 'color: red');
+        })
         
         const result = document.querySelector('.result__author');
         result.appendChild(resultAuthor);
@@ -26,20 +29,21 @@ export default class Card {
                 console.log(data)
                 for (let i=0; i<data.length; i++){
                     const resultAlbum = document.createElement('h2');
-                    resultAlbum.classList.add('result__author-album');
+                    resultAlbum.classList.add('result__album-title');
                     resultAlbum.textContent = data[i].title;
 
                     resultAlbum.addEventListener('click', function() {
+                        resultAlbum.setAttribute('style', 'color: red');
                         apiFoto.getImage(data[i].id)
                         .then((data) => {
                             console.log(data)
                             for (let i=0; i<30; i++){
                                 const resultCard = document.createElement('img');
-                                resultCard.classList.add('result__foto');
+                                resultCard.classList.add('result__foto-image');
     
                                 resultCard.setAttribute('src', `${data[i].url}`);
                                 resultCard.setAttribute('alt', 'Подгруженное изображение');
-                                const resultImage = document.querySelector('.result__image');
+                                const resultImage = document.querySelector('.result__foto');
                                 resultImage.appendChild(resultCard);
                             }
                             

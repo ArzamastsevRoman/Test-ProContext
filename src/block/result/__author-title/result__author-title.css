@@ -1,0 +1,13 @@
+.result__author-title {
+    margin: 15px auto 30px;
+    font-family: roboto;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 20px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.result__author-title:hover {
+    color: green;
+}

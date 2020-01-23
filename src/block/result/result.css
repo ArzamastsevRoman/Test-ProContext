@@ -1,5 +1,7 @@
 @import url(./__card/result__card.css);
-@import url(./__foto/result__foto.css);
+@import url(./__foto-image/result__foto-image.css);
+@import url(./__album-title/result__album-title.css);
+@import url(./__author-title/result__author-title.css);
 
 .result {
     margin: 0 20px 30px;
@@ -9,9 +11,6 @@
     grid-template-columns: 1fr 1fr 1fr;
 }
 
-@media screen and (max-width: 767px) {
-    .result {
-        grid-gap: 30px;
-        grid-template-columns: 1fr;
-    }
+.header__link:active {
+    opacity: 0.9;
 }
